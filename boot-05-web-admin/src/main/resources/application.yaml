@@ -1,0 +1,52 @@
+server:
+  port: 8787
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/clannad
+    username: root
+    password: 5920
+    driver-class-name: com.mysql.jdbc.Driver
+  jdbc:
+    template:
+      query-timeout: 1
+  boot:
+    admin:
+      client:
+        url: 'http://localhost:8888'
+
+mybatis:
+  #config-location:  classpath:mybatis/mybatis-config.xml 这个文件里面的配置和这里的配置不能同时存在
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+edis: #这个是配置redis相关的
+  host:
+  port:
+  password:
+
+management: #这个是配置actuator相关的
+  endpoint:
+    metrics:
+      enabled: true
+    info:
+      enabled: true
+    beans:
+      enabled: true
+    health:
+      show-details: always
+      enabled: true
+  endpoints:
+    enabled-by-default: true #暴露所有端点
+    #enabled-by-default: false #关闭暴露所有端点（除了指定的endpoint中）
+    web:
+      exposure:
+        include: "*" #以web方式暴露
+info:
+  appName: boot-admin
+  appVersion: 1.0.0
+#    mavenProjectName: @project.artifactId@
+#    mavenProjectVersion: @project.version@
+
+

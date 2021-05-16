@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feng</title>
+</head>
+<body>
+    <h2>feng的第一个springboot index页面</h2>
+
+    <h2>测试REST风格</h2>
+    <form action="/user" method="get">
+        <input type="submit" value="REST-GET 提交">
+    </form>
+    <form action="/user" method="post">
+        <input type="submit" value="REST-POST 提交">
+    </form>
+    <form action="/user" method="post">
+        <input type="hidden" value="PUT" name="_method">
+        <input type="hidden" value="PUT" name="_m">
+        <input type="submit" value="REST-PUT 提交">
+    </form>
+    <form action="/user" method="post">
+        <input type="hidden" value="DELETE" name="_method">
+        <input type="submit" value="REST-DELETE 提交">
+    </form>
+
+    <h2>测试基本注解</h2>
+    <ul>
+        <a href="car/3/owner/kdf?age=19&inters=basketball&inters=pingpang">car/{id}/owner/{username}</a>
+    </ul>
+    <a href="/car/1">@PathVariable</a> <br>
+    <a href="/car/1">@RequestHeader</a> <br>
+    <a href="/car?brand=byd">@RequestParam-GET</a> <br>
+    <a href="/car?brand=byd&brand=yd">@RequestParam-GET</a> <br>
+    <a href="/car/sell;low=34;brand=byd,audi,yd">@MatrixVariable（矩阵变量）</a> <br>
+    <a href="/car/sell;low=34;brand=byd;brand=audi;brand=yd">@MatrixVariable（矩阵变量）</a> <br>
+    <a href="/boss/1;age=20/2;age=10">@MatrixVariable（矩阵变量）/boss/{bossId}/{empId}</a> <br>
+    <form action="/save" method="post">
+        测试@RequestBody获取数据<br>
+        用户名：<input name="userName"> <br>
+        邮箱：<input name="email">
+        <input type="submit" value="提交">
+    </form>
+
+<form action="/saveuser" method="post">
+    姓名：<input name="userName" value="dkfdf">
+    <br>
+    年龄：<input name="age" value="19">
+    <br>
+    生日：<input name="birth" value="2020/2/2">
+    <br>
+    宠物：<input name="pet" value="猫,3">
+    <input type="submit" value="保存">
+</form>
+</body>
+</html>

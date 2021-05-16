@@ -1,0 +1,28 @@
+person:
+  userName: 李进
+  boss: true
+  birth: 2000/02/27
+  age: 21
+
+  interests:
+    - 篮球
+    - 乒乓球
+    - 羽毛球
+
+  animal: [猫,狗]
+
+  score: {English: 90,Math: 121}
+    #English: 90
+    #Math: 121
+  salarys:
+    - 100000
+    - 200000
+  pet:
+    name: 狗
+    weight: 30
+  allPets:
+    sick:
+      - {name: 小灰狗,weight: 29.4}
+      - name: 小黄猫
+        weight: 10.05
+    health: [{name: 小白狗,weight: 30.05},{name: 小花猫,weight: 9.07}]
